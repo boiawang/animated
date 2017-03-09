@@ -1,4 +1,4 @@
 
-global.React = require('react');
-global.ReactDOM = require('react-dom');
-global.Animated = require('../../lib/targets/react-dom');
+window.React = require('react');
+window.ReactDOM = require('react-dom');
+window.Animated = require('../../lib/targets/react-dom');

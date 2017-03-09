@@ -11,7 +11,7 @@
 'use strict';
 
 var RequestAnimationFrame = {
-  current: cb => global.requestAnimationFrame(cb),
+  current: cb => window.requestAnimationFrame(cb),
   inject(injected) {
     RequestAnimationFrame.current = injected;
   },

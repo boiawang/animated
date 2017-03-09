@@ -11,7 +11,7 @@
 'use strict';
 
 var CancelAnimationFrame = {
-  current: id => global.cancelAnimationFrame(id),
+  current: id => window.cancelAnimationFrame(id),
   inject(injected) {
     CancelAnimationFrame.current = injected;
   },
