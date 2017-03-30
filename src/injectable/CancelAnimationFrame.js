@@ -9,9 +9,14 @@
  * @flow
  */
 'use strict';
-
+var thisCancelAnimationFrame;
+if (typeof global == 'object') {
+  thisCancelAnimationFrame = global.cancelAnimationFrame
+} else if (typeof window == 'object') {
+  thisCancelAnimationFrame = window.cancelAnimationFrame
+}
 var CancelAnimationFrame = {
-  current: id => window.cancelAnimationFrame(id),
+  current: id => thisCancelAnimationFrame(id),
   inject(injected) {
     CancelAnimationFrame.current = injected;
   },
