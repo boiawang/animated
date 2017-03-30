@@ -9,9 +9,14 @@
  * @flow
  */
 'use strict';
-
+var thisRequestAnimationFrame;
+if (typeof global == 'object') {
+  thisRequestAnimationFrame = global.requestAnimationFrame
+} else if (typeof window == 'object') {
+  thisRequestAnimationFrame = window.requestAnimationFrame
+}
 var RequestAnimationFrame = {
-  current: cb => window.requestAnimationFrame(cb),
+  current: cb => thisRequestAnimationFrame(cb),
   inject(injected) {
     RequestAnimationFrame.current = injected;
   },

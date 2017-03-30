@@ -1,6 +1,6 @@
 {
   "name": "animated-js",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Declarative Animations Library for Rax",
   "main": "lib/index.js",
   "scripts": {

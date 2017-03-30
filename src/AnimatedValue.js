@@ -16,7 +16,14 @@ var AnimatedInterpolation = require('./AnimatedInterpolation');
 var Interpolation = require('./Interpolation');
 var Animation = require('./Animation');
 var guid = require('./guid');
-var Set = window.Set || require('./SetPolyfill');
+var Set;
+if (typeof global == 'object') {
+  Set = global.Set
+} else if (typeof window == 'object') {
+  Set = window.Set
+} else {
+  Set = require('./SetPolyfill');
+}
 
 import type { EndCallback } from './Animation';
 import type { InterpolationConfigType } from './Interpolation';
