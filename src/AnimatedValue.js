@@ -17,10 +17,10 @@ var Interpolation = require('./Interpolation');
 var Animation = require('./Animation');
 var guid = require('./guid');
 var Set;
-if (typeof global == 'object') {
-  Set = global.Set
-} else if (typeof window == 'object') {
-  Set = window.Set
+if (typeof global == 'object' && global.Set) {
+  Set = global.Set;
+} else if (typeof window == 'object' && window.Set) {
+  Set = window.Set;
 } else {
   Set = require('./SetPolyfill');
 }
